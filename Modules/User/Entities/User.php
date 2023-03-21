@@ -5,12 +5,13 @@ namespace Modules\User\Entities;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Modules\User\Database\factories\UserFactory;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
+    use Notifiable, HasFactory;
 
     /**
      * The attributes that are mass assignable.
