@@ -31,6 +31,7 @@ function rollback() {
 }
 
 function migrate_seed() {
+    ./vendor/bin/sail php artisan migrate:rollback
     ./vendor/bin/sail php artisan migrate
     ./vendor/bin/sail artisan module:seed
 }
