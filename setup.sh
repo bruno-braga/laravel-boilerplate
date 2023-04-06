@@ -22,6 +22,7 @@ function create_env() {
 
 function generate_env_key_jwt() {
     ./vendor/bin/sail php artisan key:generate
+    ./vendor/bin/sail php artisan jwt:secret
     ./vendor/bin/sail php artisan jwt:generate
 }
 

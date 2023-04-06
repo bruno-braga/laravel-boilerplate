@@ -27,17 +27,6 @@ services:
             - meilisearch
             - mailpit
             - selenium
-    postgres:
-        image: 'postgres:latest'
-        ports:
-            - '5432:5432'
-        environment:
-            POSTGRES_PASSWORD: '${DB_PASSWORD}'
-            POSTGRES_DB: '${DB_DATABASE}'
-        volumes:
-            - 'sail-postgres:/var/lib/postgresql/data'
-        networks:
-            - sail
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -118,6 +107,4 @@ volumes:
     sail-redis:
         driver: local
     sail-meilisearch:
-        driver: local
-    sail-postgres:
         driver: local
